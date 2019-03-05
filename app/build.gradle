@@ -18,3 +18,11 @@ dependencies {
 repositories {
     mavenCentral()
 }
+
+test{
+    //switch to TestNG, default is JUnit
+    useTestNG() {
+        useDefaultListeners = true
+        //suites "src/test/resources/BasicTestXML/LoginTest.xml"
+    }
+}
