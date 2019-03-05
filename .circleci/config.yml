@@ -61,9 +61,9 @@ jobs:
 
       # generate reports
       # Save artifacts
-      - store_artifacts:
-          path: build
+      #- store_artifacts:
+      #    path: app
 
       # Upload test results
       - store_test_results:
-          path: build
+          path: app
