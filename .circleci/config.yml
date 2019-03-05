@@ -60,14 +60,14 @@ jobs:
       - run: gradle test
 
       # generate reports
-      - run: mkdir app/build/artifacts
-      - run: mkdir app/build/test-results
+      - run: mkdir /app/build/artifacts
+      - run: mkdir /app/build/test-results
 
       # Save artifacts
       - store_artifacts:
-          path: app/build/artifacts
+          path: /app/build/artifacts
           destination: artifacts
 
       # Upload test results
       - store_test_results:
-          path: app/build/test-results
+          path: /app/build/test-results
