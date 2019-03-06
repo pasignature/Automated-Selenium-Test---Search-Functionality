@@ -45,7 +45,7 @@ public class searchFunctionalityTest {
 
         WebDriverWait wait = new WebDriverWait(driver, Long.parseLong(properties.getProperty("explicitWait")));
 
-        driver.get(properties.getProperty("UAT_URL"));
+        driver.get(properties.getProperty("aut_URL"));
         driver.findElement(By.cssSelector("div.root___1ZGR8:nth-child(3)")).click();
         WebElement mySelectElement = driver.findElement(By.name("yearRange.min"));
         Select dropdown = new Select(mySelectElement);
