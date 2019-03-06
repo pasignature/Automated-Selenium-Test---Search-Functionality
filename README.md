@@ -6,17 +6,19 @@ Automation Test for Search Functionality using Selenium and Java.
 This repository is a very small demonstration of using selenium webdriver and java binding to run automated test in Chrom web browser. This repo is deployed on the CircleCI continuous integration platform.
 
 Discussion
-===
+---
 
 I used the following technologies: Selenium 2, TestNG, Java, Gradle, and Android Studio IDE. I created the project from scratch in Android Studio IDE and pushed it to version control system, github. I wrote the scripts in such a way that it would be easy for another tester to pick it up and continue working on it. I also deployed the test on the CircleCI's continuous integration and delivery platform for ease of running the test in an automated way.
 
-# Prerequisites:
+Prerequisites
+---
+
 - ChromeDriver
 - JDK 8+
 - Any IDE
 
-Instructions
-===
+Instructions to run test
+---
 
 Method one to run the test:
 1. Clone this repo to your computer.
@@ -31,4 +33,3 @@ Method two to run the test:
    ./gradlew clean test
    
 Enjoy!
-
