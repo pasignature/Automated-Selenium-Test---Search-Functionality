@@ -13,20 +13,26 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 public class searchFunctionalityTest {
 
     private WebDriver driver;
+    private Properties properties = new Properties();
 
     @BeforeTest
-    public void setUp() {
+    public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "C:\\QATest\\chromedriver\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
+
+        properties.load(new FileReader(new File("../test.properties")));
     }
 
     @AfterTest
@@ -35,16 +41,15 @@ public class searchFunctionalityTest {
     }
 
     @Test
-    public void searchShouldReturnCarsFilteredAndSortedDesc() {
+    public void searchReturnsCarsFilteredAndSortedPriceDesc() {
 
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, Long.parseLong(properties.getProperty("explicitWait")));
 
-        driver.get("https://www.autohero.com/de/search/");
-
+        driver.get(properties.getProperty("UAT_URL"));
         driver.findElement(By.cssSelector("div.root___1ZGR8:nth-child(3)")).click();
         WebElement mySelectElement = driver.findElement(By.name("yearRange.min"));
         Select dropdown = new Select(mySelectElement);
-        dropdown.selectByVisibleText("2015");
+        dropdown.selectByVisibleText(properties.getProperty("regYearToFilter"));
 
         WebElement mySelectElement1 = driver.findElement(By.name("sort"));
         Select dropdown1 = new Select(mySelectElement1);
@@ -73,17 +78,26 @@ public class searchFunctionalityTest {
         Assert.assertTrue(isFilteredByFirstReg(regYears));
     }
 
-    // method verifies that a list contains years less than 2015
+    /**method verifies that a list contains years 2015+
+     *
+     * @param regYearsToFilter the year to start filter from
+     * @return a boolean value - true/false
+     */
     private boolean isFilteredByFirstReg(List<String> regYearsToFilter) {
         for (int i = 0; i < regYearsToFilter.size(); i++) {
-            if (Integer.valueOf(regYearsToFilter.get(i)) < 2015) {
+            if (Integer.valueOf(regYearsToFilter.get(i)) < Integer.parseInt(properties
+                    .getProperty("regYearToFilter"))) {
                 return false;
             }
         }
         return true;
     }
 
-    // function sorts a list in descending order.
+    /**function sorts a list in descending order.
+     *
+     * @param listToSort the list to be sorted
+     * @return a sorted list
+     */
     private List<String> isSortedDesc(List<String> listToSort) {
         List<String> sortedList = new ArrayList<>(listToSort);
         sortedList.sort(Collections.reverseOrder());
