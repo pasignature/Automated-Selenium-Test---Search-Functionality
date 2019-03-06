@@ -20,16 +20,16 @@ Prerequisites
 Instructions to run test
 ---
 
-Method one to run the test:
-1. Clone this repo to your computer.
-2. Import project into your favorite IDE.
-3. Modify the class searchFunctionalityTest.java to point to ChromeDriver's path on your system.
-4. Build and run the test.
-
-Method two to run the test:
+Method one:
 1. Clone this repo to your computer.
 2. Modify the class searchFunctionalityTest.java to point to ChromeDriver's path on your system.
 3. On any terminal, move to the project's root folder and execute the following command:
    ./gradlew clean test
+
+Method two:
+1. Clone this repo to your computer.
+2. Import project into your favorite IDE.
+3. Modify the class searchFunctionalityTest.java to point to ChromeDriver's path on your system.
+4. Build and run the test.
    
 Enjoy!
