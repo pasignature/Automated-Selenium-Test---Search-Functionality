@@ -62,8 +62,8 @@ jobs:
       # generate reports
       # Save artifacts
       - store_artifacts:
-          path: ~/repo/app/build/test-results
+          path: ../app/build/test-results
 
       # Upload test results
       - store_test_results:
-          path: ~/repo/app/build/test-results
+          path: ../app/build/test-results
