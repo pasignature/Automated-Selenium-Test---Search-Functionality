@@ -8,7 +8,7 @@ This repository is a very small demonstration of using selenium webdriver and ja
 Discussion
 ---
 
-I used the following technologies: Selenium 2, TestNG, Java, Gradle, and Android Studio IDE. I created the project from scratch in Android Studio IDE and pushed it to version control system, github. I wrote the scripts in such a way that it would be easy for another tester to pick it up and continue working on it. I also deployed the test on the CircleCI's continuous integration and delivery platform for ease of running the test in an automated way, after every changes or updates.
+I used the following technologies: Selenium 2, TestNG, Java, Gradle, CircleCI and Android Studio IDE. I created the project from scratch in Android Studio IDE and pushed it to version control system, github. I wrote the scripts in such a way that it would be easy for another tester to pick it up and continue working on it. I also deployed the test on the CircleCI's continuous integration and delivery platform for ease of running the test in an automated way, after every changes or updates.
 
 Prerequisites
 ---
