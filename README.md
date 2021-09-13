@@ -1,7 +1,7 @@
 Automation Test for Search Functionality using Selenium and Java.
 ===
 
-[![CircleCI](https://circleci.com/gh/pasignature/qaseleniumjava.svg?style=svg)](https://circleci.com/gh/pasignature/qaseleniumjava)
+[![CircleCI](https://circleci.com/gh/pasignature/Automated-Selenium-Test---Search-Functionality.svg?style=svg)](https://circleci.com/gh/pasignature/Automated-Selenium-Test---Search-Functionality)
 
 This repository is a very small demonstration of using selenium webdriver and java binding to run automated test in Chrome web Browser. This repo is deployed on the CircleCI continuous integration platform.
 
