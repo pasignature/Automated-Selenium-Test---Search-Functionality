@@ -30,6 +30,6 @@ Method two:
 1. Clone this repo to your computer.
 2. Import project into your favorite IDE.
 3. Modify the class searchFunctionalityTest.java to point to ChromeDriver's path on your system.
-4. Build and run the test
+4. Build and run the test.
    
 Enjoy!
